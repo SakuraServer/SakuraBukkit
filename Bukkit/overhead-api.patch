@@ -1,0 +1,28 @@
+--
+diff summary
+--- a/src/main/java/org/bukkit/entity/Player.java
++++ b/src/main/java/org/bukkit/entity/Player.java
+@@ -70,6 +70,27 @@ public interface Player extends HumanEntity, Conversable, CommandSender, Offline
+     public void setPlayerListName(String name);
+
+     /**
++     * Gets the name that is shown above a player's avatar in game.
++     * @return the player's overhead name
++     */
++    public String getOverheadName();
++
++
++    /**
++     * Sets the name that is shown above a player's avatar in game.
++     * The name cannot be longer than 16 characters, but {@link ChatColor} is supported.
++     * If the value is null, the name will be identical to {@link #getName()}.
++     * @param name new overhead name
++     * @throws IllegalArgumentException if the length of the name is too long
++     */
++    public void setOverheadName(String name);
++
++    /**
+      * Set the target of the player's compass.
+      *
+      * @param loc Location to point to
+--
